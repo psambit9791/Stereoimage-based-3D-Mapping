@@ -110,18 +110,18 @@ def main():
         if np.array_equal(imageL, imageR):
             print("Same Image")
         # generates edge map for Left Image
-        #edge_map(temp_path, 0, imageL)
+        edge_map(temp_path, 0, imageL)
         print("Edge Map for Left Image generated at : ", time.ctime())
         # generates edge map for Right Image
-        #edge_map(temp_path, 1, imageR)
+        edge_map(temp_path, 1, imageR)
         print("Edge Map for Right Image generated at : ", time.ctime())
         # saves edge map
         filename = root_path+"edge_map.png"
-        #mpimg.imsave(filename, mpimg.imread(temp_path+"im1.png"))
+        mpimg.imsave(filename, mpimg.imread(temp_path+"im1.png"))
 
         # applies a colour mask on the edge map for better detection
-        #transparent_image(original_file_dir, temp_path, "im0.png")
-        #transparent_image(original_file_dir, temp_path, "im1.png")
+        transparent_image(original_file_dir, temp_path, "im0.png")
+        transparent_image(original_file_dir, temp_path, "im1.png")
         # reads the image for disparity map generation
         imageL = mpimg.imread(temp_path+r"im0.png")
         imageR = mpimg.imread(temp_path+r"im1.png")
